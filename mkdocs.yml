@@ -1,4 +1,5 @@
 site_name: PygameVN
+repo_url: https://github.com/staFF6773/PygameVN
   
 theme:
   name: material
