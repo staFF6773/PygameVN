@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Displaying Text and Dialogues - PygameVN</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Displaying Text and Dialogues";
+        var mkdocs_page_input_path = "displaying_text_dialogues.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PygameVN
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Galery/">Galery</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../introduction_pygame/">Introduction to Pygame</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../setting_up_environment/">Setting Up the Environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_structure/">Basic Structure of a Visual Novel</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../displaying_images_backgrounds/">Displaying Images and Backgrounds</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Displaying Text and Dialogues</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#creating-a-text-display-function">Creating a Text Display Function</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#handling-dialogues">Handling Dialogues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text-box-design">Text Box Design</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text-features">Text Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#text-formatting">Text Formatting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-code">Example Code</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../handling_choices_decisions/">Handling Choices and Decisions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../game_state_management/">Game State Management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../music_sound_effects/">Music and Sound Effects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_animations/">Basic Animations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../save_load_system/">Save and Load System</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../optimization_best_practices/">Optimization and Best Practices</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PygameVN</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Displaying Text and Dialogues</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="displaying-text-and-dialogues-in-a-visual-novel-with-pygame">Displaying Text and Dialogues in a Visual Novel with Pygame</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In visual novels, displaying text and dialogues is crucial for storytelling. This documentation provides a detailed guide on how to implement text and dialogue functionality in a visual novel using Pygame.</p>
+<h3 id="creating-a-text-display-function">Creating a Text Display Function</h3>
+<p>To display text on the screen, create a function that renders text using Pygame’s font module. This function will also handle text wrapping and positioning.</p>
+<pre><code class="language-python">def display_text(text, x, y, font, color=BLACK):
+    &quot;&quot;&quot;
+    Renders and displays text on the screen at the specified position.
+
+    Args:
+        text (str): The text to be displayed.
+        x (int): The x-coordinate of the text position.
+        y (int): The y-coordinate of the text position.
+        font (pygame.font.Font): The font object to use.
+        color (tuple): The color of the text (default is black).
+    &quot;&quot;&quot;
+    lines = text.split('\n')
+    y_offset = 0
+    for line in lines:
+        text_surface = font.render(line, True, color)
+        screen.blit(text_surface, (x, y + y_offset))
+        y_offset += text_surface.get_height()
+</code></pre>
+<h3 id="handling-dialogues">Handling Dialogues</h3>
+<p>Dialogues in visual novels typically involve sequential text with player input to proceed. Implement a function to handle and display dialogues:</p>
+<pre><code class="language-python">def show_dialogue(dialogue_list, font, color=BLACK):
+    &quot;&quot;&quot;
+    Displays a sequence of dialogues on the screen.
+
+    Args:
+        dialogue_list (list): A list of dialogue strings.
+        font (pygame.font.Font): The font object to use.
+        color (tuple): The color of the text (default is black).
+    &quot;&quot;&quot;
+    index = 0
+    while index &lt; len(dialogue_list):
+        screen.fill(WHITE)
+        display_text(dialogue_list[index], 20, SCREEN_HEIGHT - 100, font, color)
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    index += 1
+                    break
+</code></pre>
+<h3 id="text-box-design">Text Box Design</h3>
+<p>To enhance the visual presentation, you can create a text box background. Use Pygame’s Rect object to define the text box area and fill it with a color:</p>
+<pre><code class="language-python">def draw_text_box(y_offset, width=SCREEN_WIDTH-40, height=100, color=BLACK):
+    &quot;&quot;&quot;
+    Draws a text box at the bottom of the screen.
+
+    Args:
+        y_offset (int): The y-coordinate offset for the text box.
+        width (int): The width of the text box.
+        height (int): The height of the text box.
+        color (tuple): The color of the text box (default is black).
+    &quot;&quot;&quot;
+    pygame.draw.rect(screen, color, pygame.Rect(20, SCREEN_HEIGHT - y_offset - height, width, height))
+</code></pre>
+<h3 id="text-features">Text Features</h3>
+<p>You can add effects such as typing animation to make dialogues more engaging:</p>
+<pre><code class="language-python">import time
+
+def type_text(text, x, y, font, color=BLACK, speed=0.05):
+    &quot;&quot;&quot;
+    Displays text with a typing effect.
+
+    Args:
+        text (str): The text to be displayed.
+        x (int): The x-coordinate of the text position.
+        y (int): The y-coordinate of the text position.
+        font (pygame.font.Font): The font object to use.
+        color (tuple): The color of the text (default is black).
+        speed (float): The typing speed in seconds per character (default is 0.05).
+    &quot;&quot;&quot;
+    for i in range(len(text) + 1):
+        screen.fill(WHITE)
+        display_text(text[:i], x, y, font, color)
+        pygame.display.flip()
+        time.sleep(speed)
+</code></pre>
+<h3 id="text-formatting">Text Formatting</h3>
+<p>For different text styles, create a dictionary of fonts:</p>
+<pre><code class="language-python">fonts = {
+    'normal': pygame.font.Font(None, 36),
+    'bold': pygame.font.Font(None, 48),
+    'italic': pygame.font.Font(None, 24)
+}
+
+def display_styled_text(text, x, y, style='normal', color=BLACK):
+    &quot;&quot;&quot;
+    Displays styled text on the screen.
+
+    Args:
+        text (str): The text to be displayed.
+        x (int): The x-coordinate of the text position.
+        y (int): The y-coordinate of the text position.
+        style (str): The style of the text ('normal', 'bold', 'italic').
+        color (tuple): The color of the text (default is black).
+    &quot;&quot;&quot;
+    font = fonts.get(style, fonts['normal'])
+    display_text(text, x, y, font, color)
+</code></pre>
+<h3 id="example-code">Example Code</h3>
+<p>Here’s a complete example that integrates text and dialogue handling into a simple Pygame loop:</p>
+<pre><code class="language-python">import pygame
+import sys
+import time
+
+# Initialize Pygame
+pygame.init()
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption(&quot;Visual Novel&quot;)
+font = pygame.font.Font(None, 36)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+def display_text(text, x, y, font, color=BLACK):
+    lines = text.split('\n')
+    y_offset = 0
+    for line in lines:
+        text_surface = font.render(line, True, color)
+        screen.blit(text_surface, (x, y + y_offset))
+        y_offset += text_surface.get_height()
+
+def show_dialogue(dialogue_list, font, color=BLACK):
+    index = 0
+    while index &lt; len(dialogue_list):
+        screen.fill(WHITE)
+        draw_text_box(100)
+        display_text(dialogue_list[index], 20, SCREEN_HEIGHT - 100, font, color)
+        pygame.display.flip()
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    index += 1
+                    break
+
+def draw_text_box(y_offset, width=SCREEN_WIDTH-40, height=100, color=BLACK):
+    pygame.draw.rect(screen, color, pygame.Rect(20, SCREEN_HEIGHT - y_offset - height, width, height))
+
+# Example dialogue
+dialogues = [
+    &quot;Welcome to our visual novel!&quot;,
+    &quot;Here is how we handle text and dialogues.&quot;,
+    &quot;Press SPACE to proceed through the dialogue.&quot;
+]
+
+# Main loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    show_dialogue(dialogues, font, BLACK)
+    pygame.quit()
+    sys.exit()
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../displaying_images_backgrounds/" class="btn btn-neutral float-left" title="Displaying Images and Backgrounds"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../handling_choices_decisions/" class="btn btn-neutral float-right" title="Handling Choices and Decisions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../displaying_images_backgrounds/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../handling_choices_decisions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

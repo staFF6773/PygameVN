@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Displaying Images and Backgrounds - PygameVN</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Displaying Images and Backgrounds";
+        var mkdocs_page_input_path = "displaying_images_backgrounds.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PygameVN
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Galery/">Galery</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../introduction_pygame/">Introduction to Pygame</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../setting_up_environment/">Setting Up the Environment</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_structure/">Basic Structure of a Visual Novel</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Displaying Images and Backgrounds</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-pygame-environment">Setting Up the Pygame Environment</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#image-handling">Image Handling</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dynamic-background-switching">Dynamic Background Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#layered-backgrounds-and-foregrounds">Layered Backgrounds and Foregrounds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#animated-backgrounds">Animated Backgrounds</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#character-management">Character Management</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#managing-multiple-characters-with-state-changes">Managing Multiple Characters with State Changes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interactive-character-expressions">Interactive Character Expressions</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../displaying_text_dialogues/">Displaying Text and Dialogues</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../handling_choices_decisions/">Handling Choices and Decisions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../game_state_management/">Game State Management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../music_sound_effects/">Music and Sound Effects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_animations/">Basic Animations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../save_load_system/">Save and Load System</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../optimization_best_practices/">Optimization and Best Practices</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PygameVN</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Displaying Images and Backgrounds</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="displaying-images-and-backgrounds-in-a-visual-novel-using-pygame">Displaying Images and Backgrounds in a Visual Novel Using Pygame</h1>
+<h2 id="introduction">Introduction</h2>
+<p>In visual novels, displaying images and backgrounds is crucial for creating an immersive experience. Pygame, a popular library for making games in Python, provides the necessary tools to handle images and backgrounds efficiently. This document will guide you through the process of displaying images and backgrounds in a visual novel using Pygame.</p>
+<h2 id="setting-up-the-pygame-environment">Setting Up the Pygame Environment</h2>
+<p>Before diving into advanced examples, ensure that you have a basic Pygame setup:</p>
+<pre><code class="language-python">import pygame
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+# Screen dimensions
+width, height = 800, 600
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Advanced Visual Novel')
+
+# Clock for controlling frame rate
+clock = pygame.time.Clock()
+</code></pre>
+<h2 id="image-handling">Image Handling</h2>
+<h3 id="dynamic-background-switching">Dynamic Background Switching</h3>
+<p>For visual novels, switching backgrounds dynamically based on game events or player choices is common. Here’s how to manage dynamic background switching:</p>
+<pre><code class="language-python">class Scene:
+    def __init__(self, background_path):
+        self.background = pygame.image.load(background_path)
+
+    def draw(self, screen):
+        screen.blit(self.background, (0, 0))
+
+# Initialize scenes
+scene1 = Scene('path_to_background1.jpg')
+scene2 = Scene('path_to_background2.jpg')
+
+current_scene = scene1
+
+# Main loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Clear screen
+    screen.fill((0, 0, 0))
+
+    # Draw current scene
+    current_scene.draw(screen)
+
+    # Update display
+    pygame.display.flip()
+    clock.tick(60)  # 60 frames per second
+</code></pre>
+<h3 id="layered-backgrounds-and-foregrounds">Layered Backgrounds and Foregrounds</h3>
+<p>To create a layered effect with multiple backgrounds or foregrounds:</p>
+<pre><code class="language-python">class LayeredScene:
+    def __init__(self, background_path, foreground_path):
+        self.background = pygame.image.load(background_path)
+        self.foreground = pygame.image.load(foreground_path)
+
+    def draw(self, screen):
+        screen.blit(self.background, (0, 0))
+        screen.blit(self.foreground, (0, 0))  # Foreground on top
+
+# Initialize layered scene
+layered_scene = LayeredScene('path_to_background.jpg', 'path_to_foreground.png')
+
+# Main loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Clear screen
+    screen.fill((0, 0, 0))
+
+    # Draw layered scene
+    layered_scene.draw(screen)
+
+    # Update display
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+<h3 id="animated-backgrounds">Animated Backgrounds</h3>
+<p>For animated backgrounds, you can cycle through a series of images:</p>
+<pre><code class="language-python">class AnimatedBackground:
+    def __init__(self, image_paths, frame_rate):
+        self.frames = [pygame.image.load(path) for path in image_paths]
+        self.frame_rate = frame_rate
+        self.current_frame = 0
+        self.last_update = pygame.time.get_ticks()
+
+    def update(self):
+        now = pygame.time.get_ticks()
+        if now - self.last_update &gt; self.frame_rate:
+            self.current_frame = (self.current_frame + 1) % len(self.frames)
+            self.last_update = now
+
+    def draw(self, screen):
+        screen.blit(self.frames[self.current_frame], (0, 0))
+
+# Initialize animated background
+animation = AnimatedBackground(['frame1.jpg', 'frame2.jpg', 'frame3.jpg'], 100)  # 100 ms per frame
+
+# Main loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Update animation
+    animation.update()
+
+    # Clear screen
+    screen.fill((0, 0, 0))
+
+    # Draw animated background
+    animation.draw(screen)
+
+    # Update display
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+<h2 id="character-management">Character Management</h2>
+<h3 id="managing-multiple-characters-with-state-changes">Managing Multiple Characters with State Changes</h3>
+<p>You may need to display different characters or change their appearance based on game events:</p>
+<pre><code class="language-python">class Character:
+    def __init__(self, images):
+        self.images = {name: pygame.image.load(path) for name, path in images.items()}
+        self.current_image = None
+
+    def set_image(self, name):
+        self.current_image = self.images.get(name, None)
+
+    def draw(self, screen, position):
+        if self.current_image:
+            screen.blit(self.current_image, position)
+
+# Initialize characters
+character_images = {
+    'hero': 'hero.png',
+    'villain': 'villain.png'
+}
+character = Character(character_images)
+character.set_image('hero')
+
+# Main loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Clear screen
+    screen.fill((0, 0, 0))
+
+    # Draw character
+    character.draw(screen, (100, 400))
+
+    # Update display
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+<h3 id="interactive-character-expressions">Interactive Character Expressions</h3>
+<p>Changing expressions or animations for characters:</p>
+<pre><code class="language-python">class AnimatedCharacter:
+    def __init__(self, image_paths, frame_rate):
+        self.frames = [pygame.image.load(path) for path in image_paths]
+        self.frame_rate = frame_rate
+        self.current_frame = 0
+        self.last_update = pygame.time.get_ticks()
+
+    def update(self):
+        now = pygame.time.get_ticks()
+        if now - self.last_update &gt; self.frame_rate:
+            self.current_frame = (self.current_frame + 1) % len(self.frames)
+            self.last_update = now
+
+    def draw(self, screen, position):
+        screen.blit(self.frames[self.current_frame], position)
+
+# Initialize animated character
+character_animation = AnimatedCharacter(['expression1.png', 'expression2.png', 'expression3.png'], 200)  # 200 ms per frame
+
+# Main loop
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    # Update character animation
+    character_animation.update()
+
+    # Clear screen
+    screen.fill((0, 0, 0))
+
+    # Draw animated character
+    character_animation.draw(screen, (100, 400))
+
+    # Update display
+    pygame.display.flip()
+    clock.tick(60)
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../basic_structure/" class="btn btn-neutral float-left" title="Basic Structure of a Visual Novel"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../displaying_text_dialogues/" class="btn btn-neutral float-right" title="Displaying Text and Dialogues">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../basic_structure/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../displaying_text_dialogues/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

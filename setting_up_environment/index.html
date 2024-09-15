@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Setting Up the Environment - PygameVN</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Setting Up the Environment";
+        var mkdocs_page_input_path = "setting_up_environment.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> PygameVN
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Galery/">Galery</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../introduction_pygame/">Introduction to Pygame</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Setting Up the Environment</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requisitos-previos">Requisitos Previos</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-python-36">1. Python 3.6+</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-is-it-important-to-use-python-36-or-higher">Why is it important to use Python 3.6 or higher?</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-pygame">2. Pygame</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#why-is-pygame-crucial-for-a-visual-novel">Why is Pygame crucial for a visual novel?</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#command-explained">Command explained:</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_structure/">Basic Structure of a Visual Novel</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../displaying_images_backgrounds/">Displaying Images and Backgrounds</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../displaying_text_dialogues/">Displaying Text and Dialogues</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../handling_choices_decisions/">Handling Choices and Decisions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../game_state_management/">Game State Management</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../music_sound_effects/">Music and Sound Effects</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../basic_animations/">Basic Animations</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../save_load_system/">Save and Load System</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../optimization_best_practices/">Optimization and Best Practices</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">PygameVN</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Setting Up the Environment</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="environment-preparation-in-pygame-for-visual-novels">Environment Preparation in Pygame for Visual Novels</h1>
+<h2 id="requisitos-previos">Requisitos Previos</h2>
+<p>Before starting to develop a visual novel in Pygame, it is important to make sure that the development environment is properly configured. To do this, we need two key components: <strong>Python</strong> and <strong>Pygame</strong>. What these components are, why they are important, and how to install them are explained in detail below.</p>
+<hr />
+<h2 id="1-python-36">1. Python 3.6+</h2>
+<p><strong>Python</strong> is a high-level interpreted programming language that is widely used in software development, including video games, web applications, automation scripts, data analysis, among others. Pygame is designed to work with <strong>Python</strong>, so it is essential to have it installed.</p>
+<h3 id="why-is-it-important-to-use-python-36-or-higher">Why is it important to use Python 3.6 or higher?</h3>
+<ul>
+<li>
+<p>Pygame is compatible with most recent versions of Python, but <strong>some older versions of Python do not have the features and optimizations</strong> that Pygame and other modern modules require.</p>
+</li>
+<li>
+<p>Versions above <strong>Python 3.6</strong> introduce improvements in performance, syntax and standard libraries, facilitating the development of more efficient and maintainable applications.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: If you have a version prior to Python 3.6, it is recommended to upgrade it before starting. You can check your Python version by running the following command in your terminal or console:</p>
+</blockquote>
+<pre><code class="language-bash">python --version
+</code></pre>
+<p>Si ves una versión inferior a 3.6, debes descargar la más reciente desde el <a href="https://www.python.org/">sitio oficial de Python</a>.</p>
+<h2 id="2-pygame">2. Pygame</h2>
+<p>Pygame is a library that allows you to develop video games in Python in a simple way. It provides tools to handle graphics, events, sound, keyboard and mouse inputs, and many other functionalities needed to create a complete game or, in this case, a visual novel.</p>
+<h3 id="why-is-pygame-crucial-for-a-visual-novel">Why is Pygame crucial for a visual novel?</h3>
+<ul>
+<li>
+<p><strong>Ease of creating 2D graphical interfaces</strong>: Visual novels typically display images of characters, backgrounds and text. Pygame makes it very easy to load and render these images on the screen.</p>
+</li>
+<li>
+<p><strong>Event management</strong>: You can manage user interactions, such as clicks and key presses, to navigate dialogs and story options.</p>
+</li>
+<li>
+<p><strong>Support for sound and music</strong>: Visual novels also often have background music and sound effects to enhance the user experience. Pygame makes it easy to play sounds without the need to install additional libraries.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: Installing Pygame: Once you have Python installed, you must install the Pygame library using the Python package manager, pip. This process is very simple and only requires the following command:</p>
+</blockquote>
+<pre><code class="language-bash">pip install pygame
+</code></pre>
+<h3 id="command-explained">Command explained:</h3>
+<ul>
+<li>
+<p><code>pip</code>: This is the Python package manager. It is used to install, update and uninstall Python libraries from the official repository.</p>
+</li>
+<li>
+<p><code>install</code> pygame: Tells <code>pip</code> to install the <code>pygame</code> library in your Python environment.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>: Installation verification: To make sure that Pygame has been installed correctly, you can run this small Python script:</p>
+</blockquote>
+<pre><code class="language-python">import pygame
+print(pygame.ver)
+</code></pre>
+<p>If the installation was successful, you will see a printout of the installed Pygame version.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../introduction_pygame/" class="btn btn-neutral float-left" title="Introduction to Pygame"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../basic_structure/" class="btn btn-neutral float-right" title="Basic Structure of a Visual Novel">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../introduction_pygame/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../basic_structure/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
